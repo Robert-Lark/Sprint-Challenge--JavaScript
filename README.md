@@ -26,13 +26,49 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Briefly compare and contrast `.forEach` & `.map` (2-3 sentences max)
 
+the main difference between .forEach & .map is that .forEach does not create an array and .map does. 
+
 2. Explain the difference between a callback and a higher order function.
+
+A higher order function is a template for callback functions to be passed to at a later time. Callback functions are generally unique whereas higher-order functions are re-used when multiple callback functions are passed to one after another.
 
 3. What is closure?
 
+Closure relates to what functions remember. 
+
 4. Describe the four rules of the 'this' keyword.
 
+1.GLOBAL CONTEXT: 			function sayName = name => {
+							console.log(this);
+							Return name;
+						}
+						sayName(“Rob”);
+
+/// when in global scope the value of this will be the window/console object: you will see code that describes the terminal.
+
+2. IMPLICIT BINDING: 	const myObj = {
+					Greeting: ‘Hello’,
+					sayHello: function(name) {
+						console.log(`${this.greeting} my name is ${name}`);
+						Consoel.log(this);
+					}
+				};
+				myObj.sayHello(‘Ryan’)
+
+/// prints ‘Hello my name is Ryan’
+/// prints {greeting: ‘Hello’, sayHello: f}
+
+Whenever a function/method is called by a preceding dot, the object left of the dot gets ‘this’.
+
+3. NEW BINDING:  
+
+Whenever a constructor function is used ‘this’ refers to the specific instance of the object that is created and returned by the constructor function.
+
+4. EXPLICIT BINDING: Whenever JavaScripts call or apply method is used, this is explicitly defined. 
+
 5. Why do we need super() in an extended class?
+
+super replaces .call(this) it is needed to bring in the attributes of the parent constructor. 
 
 ### Task 1 - Project Set up
 
